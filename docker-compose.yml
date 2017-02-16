@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  tarantool:
+    container_name: mytarantool
+    image: tarantool/tarantool:1.7
+    command: tarantool /usr/local/share/tarantool/app.init.lua   
+    ports:
+      - 3301:3301
+      - 8080:8080
+    volumes:
+      - c:/tarantool/app:/usr/local/share/tarantool
+      - c:/tarantool/data:/var/lib/tarantool
